@@ -123,8 +123,8 @@ body {
 @for $i from 1 through 10 {
     .pattern-section:first-child:nth-last-child(#{$i}),
     .pattern-section:first-child:nth-last-child(#{$i}) ~ .pattern-section {
-        width: floor(100 / $i)+%;
-        padding-bottom: floor(100 / $i)+%;
+        width: #{floor(100 / $i)+'%'};
+        padding-bottom: #{floor(100 / $i)+'%'};
     }
 
     @media (min-width: 992px) {
