@@ -1,27 +1,23 @@
 const express = require('express');
-const { existsSync, readdirSync, writeFile } = require('fs');
+const { readdirSync, writeFile } = require('fs');
 const { render } = require('node-sass');
 const { join } = require('path');
 
 const compileSassFile = (inputFile, outputFile) => {
-    if (existsSync(inputFile)) {
-        const input = {
-            file: inputFile
-        };
-        const callback = function(renderError, result) {
-            if (renderError) {
-                console.error(renderError);
-            }
-            else {
-                writeFile(outputFile, result.css.toString(), fileError => {
-                    if (fileError) {
-                        console.error(fileError);
-                    }
-                });
-            }
-        };
-        render(input, callback);
-    }
+    render({
+        file: inputFile
+    }, (renderError, result) => {
+        if (renderError) {
+            console.error(renderError);
+        }
+        else {
+            writeFile(outputFile, result.css.toString(), fileError => {
+                if (fileError) {
+                    console.error(fileError);
+                }
+            });
+        }
+    });
 };
 
 const compileSassFiles = () => {
