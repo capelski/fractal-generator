@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		rowsLabel: document.getElementById('rows-label'),
 		rowsNumber: document.getElementById('rows-number'),
 		zoomLabel: document.getElementById('zoom-label'),
-		zoomOut: document.getElementById('zoom-out')
+		zoom: document.getElementById('zoom')
 	};
 
 	function fractalDrawerHandler() {			
@@ -25,9 +25,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
       	htmlNodes.loader.style.display = 'block';
   		htmlNodes.canvas.style.display = 'none';
 		
-		fractal.zoomOut = parseInt(htmlNodes.zoomOut.value);
-		fractal.resultRows = Math.pow(fractal.patternRows, fractal.zoomOut);
-		fractal.resultColumns = Math.pow(fractal.patternColumns, fractal.zoomOut);
+		fractal.zoom = parseInt(htmlNodes.zoom.value);
+		fractal.resultRows = Math.pow(fractal.patternRows, fractal.zoom);
+		fractal.resultColumns = Math.pow(fractal.patternColumns, fractal.zoom);
 
       	return fractalService.computeFractal(fractal, sectionValueRetriever)
       	.then(renderCanvas);
@@ -106,8 +106,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	});
 	htmlNodes.rowsNumber.addEventListener('input', gridDrawerHandler);
 	htmlNodes.columnsNumber.addEventListener('input', gridDrawerHandler);
-	htmlNodes.zoomOut.addEventListener('input', () => {
-		htmlNodes.zoomLabel.textContent = htmlNodes.zoomOut.value
+	htmlNodes.zoom.addEventListener('input', () => {
+		htmlNodes.zoomLabel.textContent = htmlNodes.zoom.value
 	});
 	htmlNodes.fractalDrawer.addEventListener('click', fractalDrawerHandler);
 	window.addEventListener('resize', updateCanvasSize);

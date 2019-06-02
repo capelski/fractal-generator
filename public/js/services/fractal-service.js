@@ -12,7 +12,7 @@ function FractalService() {
 			correspondingColumn: boxColumn
 		};
 		var nextFractal = {};
-		var iterationsNumber = fractal.zoomOut;
+		var iterationsNumber = fractal.zoom;
 		var result = iterationsNumber > 0;
 		    
 		while (result && iterationsNumber > 0) {
