@@ -1,8 +1,10 @@
 # Fractal pictures
 
+![fractal](https://user-images.githubusercontent.com/7153987/59193839-45d5dc00-8b87-11e9-98ba-4d6c02e0be85.JPG)
+
 The purpouse of this fractal pictures generator web page is to ilustrate many concepts I think that help making a web application better:
 
-- JQuery is not really indispensable for acessing dom elements. It is included in the project because it is a Bootstrap requirement, but is not used in the applicaton code)
+- JQuery is not essential for acessing dom elements. It is included in the project because it is a Bootstrap requirement, but is not used in the applicaton code
 - If the DOM elements are not destroyed and recreated, they can be kept in a reference instead of retrieveing them everytime they are needed (in the application code: htmlNodes)
 - A kind of MVC pattern is still possible in the client side and helps keeping the code clearer. In my case I separated the logic of the code in three sligthly different layers:
 	
@@ -24,3 +26,5 @@ The purpouse of this fractal pictures generator web page is to ilustrate many co
 - Use canvas for graphical representations; I'd never use it before and I wanted to try it. It turned out to be a great increase in performance
 - Use modals for confirmation messages and/or additional steps to complete an action
 - Style properties should be defined through CSS classes only instead of using id attributes. Id attributes should only be used to retrieve DOM elements through JavaScript
+
+P.S. Wondering about the get-express-app file and the URLs $modena query parameter? Check out [modena](https://github.com/L3bowski/modena-v2) to learn how to automatically expose multiple isolated express apps on a single server
