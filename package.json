@@ -4,6 +4,9 @@
     "description": "Fractal images generator using canvas",
     "main": "index.js",
     "scripts": {
+        "docker:build": "docker build -t fractal-generator .",
+        "docker:run": "docker run --name fractal-generator -p 80:3000 -d fractal-generator",
+        "docker:stop": "docker stop fractal-generator && docker rm fractal-generator",
         "start": "node index.js"
     },
     "author": "Carles Capellas <capellas.carles@gmail.com>",
