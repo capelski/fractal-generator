@@ -24,5 +24,3 @@ The purpouse of this fractal pictures generator web page is to ilustrate many co
 - Use canvas for graphical representations; I'd never use it before and I wanted to try it. It turned out to be a great increase in performance
 - Use modals for confirmation messages and/or additional steps to complete an action
 - Style properties should be defined through CSS classes only instead of using id attributes. Id attributes should only be used to retrieve DOM elements through JavaScript
-
-P.S. Wondering about the get-express-app file and the URLs \$modena query parameter? Check out [modena](https://github.com/capelski/modena-v2) to learn how to automatically expose multiple isolated express apps on a single server
